@@ -9,12 +9,13 @@ This iOS application will display list of movies and corresponding movie details
 4. Run the application `(cmd + r)`
 
 # What to expect: 
-User can see list of movies on launching the app. Those movies will be represented by movie preview image, movie title and with movie brief description. 
-User can select any movie from this list
-Selected movie details will display in next screen, This screen will display below list of details.
-a. Movie preview Image
-b.Movie Original Title
-c. Released date
-d. Movie Rating
-e. Movie Overview
+1. User can see list of movies on launching the app. Those movies will be represented by movie preview image, movie title and with movie brief description. 
+2. User can select any movie from this list
+3. Selected movie details will display in next screen, This screen will display below list of details.
+
+    a. Movie preview Image.
+    b. Movie Original Title.
+    c. Released date.
+    d. Movie Rating.
+    e. Movie Overview.
 
