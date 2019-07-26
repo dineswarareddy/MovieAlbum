@@ -7,3 +7,27 @@
 //
 
 import Foundation
+
+final class MovieListPresenter {
+    var interactor: MovieListInteractorInput?
+    var view: MovieListPresenterOutput?
+    init(view: MovieListPresenterOutput?) {
+        self.view = view
+    }
+}
+
+extension MovieListPresenter: MovieListPresenterInput {
+    func fetchMovieList() {
+        interactor?.fetchMovieList()
+    }
+}
+
+extension MovieListPresenter: MovieListInteractorOutput {
+    func updateMovieList(movieList: MovieList) {
+        view?.displayMovieList(movieList)
+    }
+    
+    func updateServerError(errorMessage: String) {
+        view?.displayError(errorMessage)
+    }
+}
