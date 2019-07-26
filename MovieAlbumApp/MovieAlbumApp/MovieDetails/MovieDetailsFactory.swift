@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+enum MovieDetailsModuleFactory {
+    static func createMovieListFactory(view: MovieDetailsPresenterOutput?) -> MovieDetailsPresenterInput {
+        let presenter = MovieDetailsPresenter(view: view)
+        let interactor = MovieDetailsInteractor(presenter: presenter)
+        presenter.view = view
+        presenter.interactor = interactor
+        return presenter
+    }
+}
