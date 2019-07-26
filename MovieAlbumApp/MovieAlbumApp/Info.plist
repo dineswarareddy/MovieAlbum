@@ -41,5 +41,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>ImageBaseURL</key>
+	<string>image.tmdb.org</string>
+	<key>API_Key</key>
+	<string>ebffa1adbb34568d50b8a8287290f4c8</string>
+	<key>movieBaseURL</key>
+	<string>api.themoviedb.org</string>
 </dict>
 </plist>
