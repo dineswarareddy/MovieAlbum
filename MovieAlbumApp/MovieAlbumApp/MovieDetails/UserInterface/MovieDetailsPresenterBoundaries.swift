@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+protocol MovieDetailsPresenterOutput {
+    func updateScreenTitle(_ title: String)
+    func updateMovieImage(_ imageURL: URL)
+    func updateMovieTitle(_ title: String)
+    func updateMovieOverView(_ overview: String)
+    func updateRating(_ rating: String)
+    func updateMovieReleaseDate(_ releaseDate: String)
+}
+
+protocol MovieDetailsPresenterInput {
+    func showCurrentMovieDetails(_ currentMovie: Movie)
+}
