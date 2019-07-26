@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+public protocol MovieListPresenterInput {
+    func fetchMovieList()
+}
+
+public protocol MovieListPresenterOutput {
+    func displayMovieList(_ movieList: MovieList)
+    func displayError(_ errorMessage: String)
+}

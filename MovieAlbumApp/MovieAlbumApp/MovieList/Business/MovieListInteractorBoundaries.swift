@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+protocol MovieListInteractorInput {
+    func fetchMovieList()
+}
+
+protocol MovieListInteractorOutput {
+    func updateMovieList(movieList: MovieList)
+    func updateServerError(errorMessage: String)
+}
