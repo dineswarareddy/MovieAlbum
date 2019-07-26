@@ -7,3 +7,27 @@
 //
 
 import Foundation
+import UIKit
+
+enum MovieListModuleFactory {
+    static func createMovieListFactory(view: MovieListPresenterOutput?) -> MovieListPresenterInput {
+        let networkController = MovieListNetworkController()
+        let presenter = MovieListPresenter(view: view)
+        let interactor = MovieListInteractor(presenter: presenter, networkController: networkController)
+        presenter.view = view
+        presenter.interactor = interactor
+        return presenter
+    }
+    
+    static func configureRouter(viewController: MovieListViewController) {
+        let router = MovieListRouter()
+        router.viewController = viewController
+        viewController.router = router
+    }
+}
+
+extension MovieListViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        router?.passDataToNextScene(segue: segue)
+    }
+}
