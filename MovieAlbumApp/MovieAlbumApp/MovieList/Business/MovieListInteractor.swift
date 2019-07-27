@@ -54,7 +54,7 @@ extension MovieListInteractor: CoreDataControllerOutput {
     func updateMovieList(movieList: [MovieModelCoreData]) {
         var outputMovieList: [Movie] = []
         _ = movieList.map({
-            outputMovieList.append(Movie(voteCount: 0, id: 0, video: false, voteAverage: 0, title: $0.title, popularity: 0, posterPath: "", originalLanguage: "", originalTitle: $0.originalTitle, genreIds: [], backdropPath: "", adult: false, overview: $0.overview, releaseDate: $0.releaseDate))
+            outputMovieList.append(Movie(voteCount: 0, id: 0, video: false, voteAverage: $0.rating, title: $0.title, popularity: 0, posterPath: $0.movieImage, originalLanguage: "", originalTitle: $0.originalTitle, genreIds: [], backdropPath: "", adult: false, overview: $0.overview, releaseDate: $0.releaseDate))
         })
         output.updateMovieList(movieList: outputMovieList)
     }
