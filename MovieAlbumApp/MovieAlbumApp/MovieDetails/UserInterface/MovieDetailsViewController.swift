@@ -26,7 +26,12 @@ class MovieDetailsViewController: UIViewController {
         if let movie = currentMovie {
             presenter?.showCurrentMovieDetails(movie)
         }
-        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func saveMovie(_ sender: Any) {
+        if let movieToSave = currentMovie {
+            presenter?.saveMovie(movieToSave)
+        }
     }
 }
 

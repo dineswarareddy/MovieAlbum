@@ -28,6 +28,14 @@ class MovieListViewController: UIViewController {
         MovieListModuleFactory.configureRouter(viewController: self)
         presenter?.fetchMovieList()
     }
+    
+    @IBAction func fetchMoviesListFromInternet(_ sender: Any) {
+        presenter?.fetchMovieList()
+    }
+    
+    @IBAction func fetchSavedMovies(_ sender: Any) {
+        presenter?.fetchSavedMoviesList()
+    }
 }
 
 extension MovieListViewController: UITableViewDelegate {
@@ -54,8 +62,8 @@ extension MovieListViewController: UITableViewDataSource {
 
 
 extension MovieListViewController: MovieListPresenterOutput {
-    func displayMovieList(_ movieList: MovieList) {
-        self.movieList = movieList.results
+    func displayMovieList(_ movieList: [Movie]) {
+        self.movieList = movieList
         movieListTableView?.reloadData()
     }
     
