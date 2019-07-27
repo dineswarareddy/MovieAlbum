@@ -19,4 +19,5 @@ protocol MovieDetailsPresenterOutput {
 
 protocol MovieDetailsPresenterInput {
     func showCurrentMovieDetails(_ currentMovie: Movie)
+    func saveMovie(_ movie: Movie)
 }

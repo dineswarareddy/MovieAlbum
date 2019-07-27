@@ -10,6 +10,7 @@ import Foundation
 
 protocol MovieDetailsInteractorInput {
     func showMovieDetails(_ movie: Movie)
+    func saveMovie(_ movie: Movie)
 }
 
 protocol MovieDetailsInteractorOutput {

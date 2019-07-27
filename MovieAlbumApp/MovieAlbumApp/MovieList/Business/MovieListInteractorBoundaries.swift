@@ -10,9 +10,10 @@ import Foundation
 
 protocol MovieListInteractorInput {
     func fetchMovieList()
+    func fetchSavedMoviesList()
 }
 
 protocol MovieListInteractorOutput {
-    func updateMovieList(movieList: MovieList)
+    func updateMovieList(movieList: [Movie])
     func updateServerError(errorMessage: String)
 }

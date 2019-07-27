@@ -10,9 +10,10 @@ import Foundation
 
 public protocol MovieListPresenterInput {
     func fetchMovieList()
+    func fetchSavedMoviesList()
 }
 
 public protocol MovieListPresenterOutput {
-    func displayMovieList(_ movieList: MovieList)
+    func displayMovieList(_ movieList: [Movie])
     func displayError(_ errorMessage: String)
 }
