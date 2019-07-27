@@ -12,8 +12,9 @@ import UIKit
 enum MovieListModuleFactory {
     static func createMovieListFactory(view: MovieListPresenterOutput?) -> MovieListPresenterInput {
         let networkController = MovieListNetworkController()
+        let coreDataController = CoreDataController()
         let presenter = MovieListPresenter(view: view)
-        let interactor = MovieListInteractor(presenter: presenter, networkController: networkController)
+        let interactor = MovieListInteractor(presenter: presenter, networkController: networkController, coreDataController: coreDataController)
         presenter.view = view
         presenter.interactor = interactor
         return presenter
