@@ -88,7 +88,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sqg-AL-dzh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Movie List" id="lda-mJ-yrc"/>
+                    <navigationItem key="navigationItem" title="Movie List" id="lda-mJ-yrc">
+                        <barButtonItem key="leftBarButtonItem" title="API Items" id="VCS-BX-Vo0">
+                            <connections>
+                                <action selector="fetchMoviesListFromInternet:" destination="GvM-W6-9Gc" id="Pnb-oW-PFs"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Saved Items" id="N3G-Tp-Dk1">
+                            <connections>
+                                <action selector="fetchSavedMovies:" destination="GvM-W6-9Gc" id="KAq-WX-QjI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="movieListTableView" destination="GHD-MX-M68" id="ynl-Dv-m7V"/>
                         <segue destination="fpH-18-qLm" kind="show" identifier="MovieDetailsPageNavigation" id="Z5D-9k-LpA"/>
@@ -125,7 +136,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wB5-Xu-o42">
-                                <rect key="frame" x="16" y="88" width="382" height="758"/>
+                                <rect key="frame" x="16" y="88" width="382" height="709"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="G0a-c4-NYU">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="348"/>
@@ -194,6 +205,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VIC-zm-0mo"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="lHr-J1-rEb">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Ge8-0I-PUV">
+                            <connections>
+                                <action selector="saveMovie:" destination="fpH-18-qLm" id="oqX-xC-4gq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="movieDescriptionLabel" destination="408-4G-vsC" id="i5y-CH-bLi"/>
                         <outlet property="movieImageView" destination="PhB-ki-MSl" id="IZT-3h-n98"/>
