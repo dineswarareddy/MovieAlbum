@@ -17,6 +17,10 @@ class MovieDetailsPresenter {
 }
 
 extension MovieDetailsPresenter: MovieDetailsPresenterInput {
+    func saveMovie(_ movie: Movie) {
+        interactor?.saveMovie(movie)
+    }
+    
     func showCurrentMovieDetails(_ currentMovie: Movie) {
         interactor?.showMovieDetails(currentMovie)
     }

@@ -20,10 +20,14 @@ extension MovieListPresenter: MovieListPresenterInput {
     func fetchMovieList() {
         interactor?.fetchMovieList()
     }
+    
+    func fetchSavedMoviesList() {
+        interactor?.fetchSavedMoviesList()
+    }
 }
 
 extension MovieListPresenter: MovieListInteractorOutput {
-    func updateMovieList(movieList: MovieList) {
+    func updateMovieList(movieList: [Movie]) {
         view?.displayMovieList(movieList)
     }
     
