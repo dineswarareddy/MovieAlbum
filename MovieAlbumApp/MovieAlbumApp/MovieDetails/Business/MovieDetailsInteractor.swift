@@ -10,12 +10,18 @@ import Foundation
 
 class MovieDetailsInteractor {
     private let output: MovieDetailsInteractorOutput
-    init(presenter: MovieDetailsInteractorOutput) {
+    private let coreDataController: CoreDataController?
+    init(presenter: MovieDetailsInteractorOutput, coredataController: CoreDataController?) {
         self.output = presenter
+        self.coreDataController = coredataController
     }
 }
 
 extension MovieDetailsInteractor: MovieDetailsInteractorInput {
+    func saveMovie(_ movie: Movie) {
+        coreDataController?.saveMovieInformation(movie)
+    }
+    
     func showMovieDetails(_ movie: Movie) {
         if let imagePath = movie.posterPath {
             output.displayMovieImage(imagePath)
@@ -35,6 +41,16 @@ extension MovieDetailsInteractor: MovieDetailsInteractorInput {
         if let overView = movie.overview {
             output.displayMovieOverView(overView)
         }
+    }
+}
+
+extension MovieDetailsInteractor: CoreDataControllerOutput {
+    func failedToSaveMovie() {
+        print("Failed to save data")
+    }
+    
+    func updateMovieList(movieList: [MovieModelCoreData]) {
+        // No need of implementation it has to handle under movie list view controller.
     }
 }
 
