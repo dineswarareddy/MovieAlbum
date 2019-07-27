@@ -30,7 +30,7 @@ enum Constants {
 }
 
 protocol MovieListControllerDelegate {
-    func updateMovieList(movieList: MovieList)
+    func updateMovieList(movieList: [Movie])
     func updateServerError(error: Error)
 }
 
@@ -52,7 +52,7 @@ final class MovieListNetworkController {
         do {
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             let movieList = try decoder.decode(MovieList.self, from: movieListData)
-            delegate?.updateMovieList(movieList: movieList)
+            delegate?.updateMovieList(movieList: movieList.results)
         } catch {
             delegate?.updateServerError(error: DefinedError.serviceError)
         }
